@@ -1,0 +1,17 @@
+We have two types of execution context one is global execution (Allocated in this) and the other one is function execution context
+
+{}=> Memory creation phrase
+ Execution Phrase 
+
+ Example 
+ Execution Phrase 
+  let val1=10
+  let val2=5
+  function addNum(val1,val2){
+    return val1+val2
+  }
+
+  let res1=addNum(val1,val2)
+  let res2=addNum(10,8)
+
+
