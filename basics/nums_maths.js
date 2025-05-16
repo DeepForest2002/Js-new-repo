@@ -12,7 +12,7 @@ const balance= new Number(100)
 
 
 const otherNumber=23.8966
-// console.log(otherNumber.toPrecision(2))
+console.log(otherNumber.toPrecision(2))
 
 const otherNumbers=10000
 // console.log(otherNumbers.toLocaleString('en-IN'))

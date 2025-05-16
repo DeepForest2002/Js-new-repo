@@ -20,12 +20,12 @@ undefined_val=Number(undefined_val);
 // console.log(undefined_val); => it will give nan means Not a number 
 
 let some_val=""
-some_val=Boolean(some_val)
-console.log(some_val); //=>Empty string means false 
+some_val=Number(some_val)
+console.log(`Value of some val is ${some_val}`); //=>Empty string means false and empty string means 0 too in number
 
 
 let some_val1="Sayan";
-some_val1=Boolean(some_val1);
-console.log(some_val1); //true because the string is not empty 
+some_val1=Number(some_val1);
+console.log(some_val1); //true because the string is not empty and in number it will treated as none 
 
 

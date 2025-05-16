@@ -4,6 +4,7 @@ console.log(string.length)
 //Accessing chars at,CharAt, charcodeat 
 console.log(string.at(19))
 
+console.log("String charCode")
 console.log(string.charCodeAt(19))
 
 //In new js update we can use negative indexing in at function but not in charat function 

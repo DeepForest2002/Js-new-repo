@@ -20,6 +20,7 @@ const myFunction = function(){
     console.log("Inside the function");
 }
 
-console.log(typeof arrays);
+// console.log(typeof arrays);
+console.log(typeof myFunction);
 
 //Non-Primitve data types are objects always    
