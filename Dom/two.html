@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <div class="week" style="background-color: black; color: white">
+      <div class="days">Monday</div>
+      <div class="days">Tuesday</div>
+      <div class="days">Wednesday</div>
+      <div class="days">Thrusday</div>
+    </div>
+  </body>
+  <script>
+    const parent = document.querySelector(".week");
+    // console.log(parent);
+    console.log(parent.children); //Html collection
+    // for (let i = 0; i < parent.children.length; i++) {
+    //   console.log(parent.children[i].innerHTML);
+    // }
+    // console.log(parent.firstElementChild);
+
+    const day1 = document.querySelector(".days");
+    // console.log(day1);
+    // console.log(day1.parent);
+
+    console.log(parent.childNodes);
+  </script>
+</html>
