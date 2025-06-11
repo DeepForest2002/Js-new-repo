@@ -71,32 +71,35 @@ function DisplayMessage(message) {
 
 function endGame() {
   guessfield.value = "";
-  guessfield.setAttribute("disabled", "");
-  para.classList.add("button"); // fixed typo
+  guessfield.setAttribute("disabled", "true");
+  para.classList.add("button");
   para.innerHTML = `<h2 id="newGame">Start New Game</h2>`;
-  startOver.appendChild(para);
+
+  if (!startOver.contains(para)) {
+    startOver.appendChild(para);
+  }
+
   playGame = false;
-  newGame();
+
+  // ⚠️ Don't call newGame() here — wait for user to click
+  const newgame = document.querySelector("#newGame");
+  newgame.addEventListener("click", newGame, { once: true });
 }
 
 function newGame() {
-  const newgame = document.querySelector("#newGame");
-  newgame.addEventListener(
-    "click",
-    function handler(e) {
-      // Generate a new random number
-      random = Math.floor(Math.random() * 100) + 1;
-      arr = [];
-      numbers_guess = 1;
-      remaining.innerHTML = `<h5>Remaining Guesses: ${11 - numbers_guess}</h5>`;
-      guessfield.removeAttribute("disabled");
-      if (startOver.contains(para)) {
-        startOver.removeChild(para);
-      }
-      playGame = true;
-      // Remove this event listener after use
-      newgame.removeEventListener("click", handler);
-    },
-    { once: true }
-  ); // Ensures the listener is only called once
+  // Reset everything
+  random = Math.floor(Math.random() * 100) + 1;
+  arr = [];
+  numbers_guess = 1;
+  remaining.innerHTML = `<h5>Remaining Guesses: ${11 - numbers_guess}</h5>`;
+  prev_guess.innerHTML = "";
+  lowHi.innerHTML = "";
+  guessfield.removeAttribute("disabled");
+
+  // Remove the restart button
+  if (startOver.contains(para)) {
+    startOver.removeChild(para);
+  }
+
+  playGame = true;
 }
