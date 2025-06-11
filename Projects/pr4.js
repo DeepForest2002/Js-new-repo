@@ -36,7 +36,7 @@ function check_val(guess) {
     alert("Please enter a number less than 100");
   } else {
     arr.push(guess);
-    if (numbers_guess === 11) {
+    if (numbers_guess === 9) {
       displayguess(guess);
       DisplayMessage(`Game over, Random number was ${random}`);
       endGame();
@@ -62,7 +62,7 @@ function displayguess(guess) {
   guessfield.value = "";
   prev_guess.innerHTML = `<h5>Prev Guesses: ${arr},</h5> `;
   numbers_guess += 1;
-  remaining.innerHTML = `<h5>Remaining Guesses: ${11 - numbers_guess} </h5>`;
+  remaining.innerHTML = `<h5>Remaining Guesses: ${10 - numbers_guess} </h5>`;
 }
 
 function DisplayMessage(message) {
@@ -72,34 +72,15 @@ function DisplayMessage(message) {
 function endGame() {
   guessfield.value = "";
   guessfield.setAttribute("disabled", "true");
-  para.classList.add("button");
-  para.innerHTML = `<h2 id="newGame">Start New Game</h2>`;
 
-  if (!startOver.contains(para)) {
-    startOver.appendChild(para);
-  }
-
-  playGame = false;
-
-  // ⚠️ Don't call newGame() here — wait for user to click
-  const newgame = document.querySelector("#newGame");
-  newgame.addEventListener("click", newGame, { once: true });
+  const btn = document.createElement("button");
+  btn.innerHTML = "Start a new Game";
+  para.appendChild(btn);
+  document.body.appendChild(para);
+  play = false;
+  newGame();
 }
 
 function newGame() {
   // Reset everything
-  random = Math.floor(Math.random() * 100) + 1;
-  arr = [];
-  numbers_guess = 1;
-  remaining.innerHTML = `<h5>Remaining Guesses: ${11 - numbers_guess}</h5>`;
-  prev_guess.innerHTML = "";
-  lowHi.innerHTML = "";
-  guessfield.removeAttribute("disabled");
-
-  // Remove the restart button
-  if (startOver.contains(para)) {
-    startOver.removeChild(para);
-  }
-
-  playGame = true;
 }
