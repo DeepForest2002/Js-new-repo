@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="Heading">Chai aur code</h1>
+    <button id="stop">Stop</button>
+    <button id="Start">Start</button>
+    <!-- <script src="./one.js"></script> -->
+  </body>
+
+  <script>
+    // setInterval(function () {
+    //   console.log("Sayan Pramanik");
+    // }, 1000);
+
+    const Say_Date = function () {
+      let date = new Date();
+      console.log(date.toLocaleTimeString());
+    };
+
+    // setInterval(Say_Date, 1000);
+
+    const start = document.querySelector("#Start");
+    const stop = document.querySelector("#stop");
+
+    let change_me;
+
+    start.addEventListener("click", function () {
+      change_me = setInterval(Say_Date, 2000);
+      console.log(change_me);
+    });
+
+    stop.addEventListener("click", function () {
+      clearInterval(change_me);
+      console.log("Stopped time interval Successfully");
+    });
+  </script>
+</html>
