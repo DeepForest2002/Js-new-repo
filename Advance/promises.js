@@ -64,3 +64,53 @@ promise4
   .finally(() => {
     console.log("Finally,The promise is either resolved or rejected");
   });
+
+//Promise 5
+const promise_five = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    let error = true;
+    if (error === false) {
+      resolve({ userName: "Sayan", Gender: "Male" });
+    } else {
+      reject("Oh no error occurred");
+    }
+  }, 5000);
+});
+
+async function Promise_five_consumer() {
+  try {
+    const response = await promise_five;
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//calling the function
+Promise_five_consumer();
+
+//Async await function
+// async function getAllusers() {
+//   try {
+//     const response = await fetch(`https://dummyjson.com/carts`);
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log("E: ", error);
+//   }
+// }
+
+// getAllusers();
+
+// one more way to fetch json
+
+fetch(`https://dummyjson.com/carts`)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
