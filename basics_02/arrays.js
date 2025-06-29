@@ -13,8 +13,10 @@ console.log(newArr) //This is a string
 
 const newArr1=[1,2,3,4,5,6]
 const myar1= newArr1.slice(1,3)
+console.log("After Slicing")
 console.log(myar1) //Slice does not manipulate the original array but splice does 
 
 const myar2=newArr1.splice(1,3)
+console.log("After Splicing")
 console.log(myar2)
 console.log(newArr1)

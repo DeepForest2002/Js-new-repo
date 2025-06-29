@@ -32,6 +32,6 @@ const obj5={...obj1,...obj2, ...obj3}
 console.log(Object.entries(regularUser))
 
 //To check wheather an object contains a ceratin property or not 
-console.log(regularUser.hasOwnProperty("fullName"))
+console.log(regularUser.hasOwnProperty("name"))
 
 console.log(Object.keys(regularUser.name))

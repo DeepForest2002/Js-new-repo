@@ -12,9 +12,9 @@ coding.forEach((item)=>{
 })
 
 //we can also give a function as a parameter in the forEach loop
-function PrintName(item){
-    console.log(item)
-}
+// function PrintName(item){
+//     console.log(item)
+// }
 // coding.forEach(PrintName)
 
 // objects inside array 

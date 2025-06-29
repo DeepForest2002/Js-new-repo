@@ -29,5 +29,7 @@ const fnc=()=>{
 console.log(fnc())
 
 //Implicit return in arrow function when we use paranthesis we dont use return statement
-const addTwoNumbers= (num1, num2)=>(num1+num2)
+const addTwoNumbers= (num1, num2)=>{
+    return num1+num2;
+}
 console.log(addTwoNumbers(6,7))

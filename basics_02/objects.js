@@ -35,6 +35,7 @@ const object={
 object.func=function(){
     console.log(`Hello,my name is ${this.name}`)
 }
-object.func()
+// object.func()
+console.log(object)
 
 
