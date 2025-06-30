@@ -41,7 +41,7 @@ promise3.then(function (user) {
 
 const promise4 = new Promise(function (resolve, reject) {
   setTimeout(function () {
-    let error = false;
+    let error = true;
     if (error === false) {
       resolve({ name: "Sayan Pramanik", email: "GFGFG@gmail.com" });
     } else {
